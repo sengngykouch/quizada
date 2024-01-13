@@ -1,0 +1,29 @@
+<div class="question">
+    <h1>Question {{multipleChoice.index + 1}}</h1>
+    {{multipleChoice.question}}
+</div>
+
+<mat-radio-group color="primary" [(ngModel)]="multipleChoice.chosenChoice">
+    @for (choice of multipleChoice.choices; track $index) {
+        <mat-radio-button [value]="choice.value">
+            <b>{{choice.label}}.</b> {{choice.value}}
+        </mat-radio-button>
+    }
+</mat-radio-group>
+
+<div class="answer-section">
+    @if(multipleChoice.chosenChoice !== undefined) {
+        <button mat-stroked-button 
+            color="primary" 
+            (click)="multipleChoice.isAnswerRevealed = !multipleChoice.isAnswerRevealed">
+            {{multipleChoice.isAnswerRevealed ? 'Hide answer' : 'Show answer'}}
+        </button>
+    }
+
+    @if (multipleChoice.isAnswerRevealed) {
+        <div>
+            <h1>Answer</h1>
+            <div class="answer" [innerHTML]="multipleChoice.answer"></div>
+        </div>
+    }
+</div>
