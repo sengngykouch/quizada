@@ -1,0 +1,17 @@
+<mat-progress-bar mode="determinate" [value]="currentProgress"/>
+
+<div class="stepper">
+    <button mat-flat-button
+        [color]="color"
+        (click)="previous()"
+        [disabled]="isPreviousDisabled">
+        Previous
+    </button>
+
+    <button mat-flat-button
+        [color]="color"
+        (click)="next()"
+        [disabled]="isNextDisabled">
+        Next
+    </button>
+</div>
