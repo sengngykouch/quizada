@@ -1,0 +1,17 @@
+@if(viewModels.length !== 0) {
+    <app-stepper color="primary"
+        [items]="viewModels"
+        (selectedIndexChanged)="handleSelectedIndexChanged($event)"/>
+}
+
+<div class="multiple-choice">
+    <mat-card>
+        <mat-card-content>
+            @if(viewModels.length === 0) {
+                <h3>Please Load the multiple-choice questions from a JSON file.</h3>
+            } @else {
+                <app-multiple-choice [multipleChoice]="viewModels[currentQuestionNumber]"/>
+            }
+        </mat-card-content>
+    </mat-card>
+</div>

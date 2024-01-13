@@ -1,0 +1,15 @@
+:host {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px;
+}
+
+.multiple-choice {
+    flex-grow: 1;
+    
+    display: flex;
+    flex-direction: column;
+}
