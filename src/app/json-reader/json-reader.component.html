@@ -1,0 +1,12 @@
+<button mat-flat-button 
+    [color]="color" 
+    type="file" 
+    (click)="filePicker.click()">
+    Load JSON file
+</button>
+
+<input class="file-picker" 
+    type="file"
+    accept="application/JSON"
+    #filePicker 
+    (change)="handleChange()"/>
